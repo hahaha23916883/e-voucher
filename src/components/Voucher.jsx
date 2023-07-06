@@ -11,12 +11,10 @@ export default function Voucher(props) {
         </div>
       </div>
       <button
-        className="voucher-btn"
-        onClick={() => {
-          props.clickLearnMore(props.id);
-        }}
+      className="voucher-btn"
+      onClick={props.getKey ? () => props.useYourVoucher(props.id) : () => props.clickLearnMore(props.id)}
       >
-        點我兌換
+        {props.getKey ? '點我兌換' : '兌換/轉送'}
       </button>
     </div>
   );

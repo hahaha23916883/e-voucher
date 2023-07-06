@@ -7,6 +7,11 @@ body {
   line-height: 17px;
   letter-spacing: -0.02em;
   background-color: #47B9F920;
+  height: 100%;
+}
+
+.body {
+  height: 100%;
 }
 
 header {
@@ -75,11 +80,16 @@ p {
   white-space: nowrap;
 }
 
+.btn-bar {
+  display: flex;
+  gap: 8px;
+}
+
 /* popover */
 .popover-bg {
   background-color: #54545470;
   z-index: 2;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   position: absolute;
   top: 0;
@@ -133,10 +143,101 @@ p {
 
 h5 {
   margin: 0;
+  font-size: 1em;
 }
 
 .popover-comfirm-page {
   position: absolute;
   display: none;
   width: 80%;
+}
+
+/* Tabs */
+.react-tabs {
+  position: relative;
+  height: 100%;
+}
+
+.react-tabs__tab-list {
+  /* border-bottom: 1px solid #ccc; */
+  /* margin: 0 0 10px; */
+  padding: 6px 12px 0 !important;
+  text-align: center;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border-radius: 4px;
+  background: #f7f7f700;
+  /* border: 1px solid #ccc; */
+  border-bottom: none;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+.react-tabs__tab--selected {
+  background: white;
+  border-color: #0074e4;
+  border-bottom: none;
+  color: #FFFFFF !important;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+  background-color: #47B9F9 !important;
+}
+
+.react-tabs__tab:focus {
+  outline: none;
+}
+
+/* Tab Panels */
+.react-tabs__tab-panel {
+  display: none;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}
+
+/* Accessibility */
+.react-tabs__tab-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.react-tabs__tab {
+  /* font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5; */
+  color: #909090;
+  /* background-color: #f7f7f7; */
+  border-color: #ccc;
+  border-bottom: none;
+}
+
+.react-tabs__tab--selected {
+  color: #000;
+  background-color: #fff;
+  border-color: #0074e4;
+}
+
+/* Animation */
+.react-tabs__tab-panel {
+  animation: react-tabs__tab-panel--animate 250ms ease-in-out;
+}
+
+@keyframes react-tabs__tab-panel--animate {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }

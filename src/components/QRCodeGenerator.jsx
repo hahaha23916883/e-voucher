@@ -13,6 +13,6 @@ export default function QRCodeComponent(props) {
       }
     });
   }, [props.text]);
-  console.log(props.text);
+  // console.log(props.text);
   return <canvas className="QRcode" ref={canvasRef} />;
 }
